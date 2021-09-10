@@ -1,5 +1,6 @@
 import CartItem from '../../models/CartItem';
 import {ADD_TO_CART, REMOVE_FROM_CART} from '../actions/cart';
+import {ADD_ORDER} from '../actions/orders';
 
 /**
  * @type {import('../../Types/CustomTypes').CartStateObject}
@@ -68,6 +69,9 @@ export default (state = initialState, action) => {
         items: updatedCartItem,
         totalAmount: state.totalAmount - selectedItem.productPrice,
       };
+
+    case ADD_ORDER:
+      return initialState;
 
     default:
       return state;

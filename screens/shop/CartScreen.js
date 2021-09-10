@@ -62,6 +62,7 @@ const CartScreen = props => {
           data={cartItems}
           renderItem={item => (
             <CartItem
+              deleteable={true}
               title={item.item.productTitle}
               quantity={item.item.quantity}
               amount={item.item.sum}
@@ -81,6 +82,10 @@ const CartScreen = props => {
       )}
     </View>
   );
+};
+
+CartScreen.navigationOptions = {
+  headerTitle: 'Your cart',
 };
 
 const styles = StyleSheet.create({

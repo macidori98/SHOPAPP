@@ -12,13 +12,15 @@ const CartItem = props => {
       </Text>
       <View style={styles.itemData}>
         <Text style={styles.amount}>${props.amount.toFixed(2)}</Text>
-        <TouchableOpacity onPress={props.onRemove} style={styles.delete}>
-          <Icon
-            name={Platform.OS === 'android' ? 'md-trash' : 'ios-trash'}
-            size={13}
-            color={Colors.red}
-          />
-        </TouchableOpacity>
+        {props.deleteable && (
+          <TouchableOpacity onPress={props.onRemove} style={styles.delete}>
+            <Icon
+              name={Platform.OS === 'android' ? 'md-trash' : 'ios-trash'}
+              size={13}
+              color={Colors.red}
+            />
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );
