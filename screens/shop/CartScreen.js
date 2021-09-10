@@ -6,6 +6,7 @@ import cart from '../../store/reducers/cart';
 import CartItem from '../../components/shop/CartItem';
 import * as cartActions from '../../store/actions/cart';
 import * as orderActions from '../../store/actions/orders';
+import Card from '../../components/UI/Card';
 
 const CartScreen = props => {
   const cartTotalAmount = useSelector(
@@ -43,7 +44,7 @@ const CartScreen = props => {
 
   return (
     <View style={styles.screen}>
-      <View style={styles.summary}>
+      <Card style={styles.summary}>
         <Text style={styles.summaryText}>
           Total:{' '}
           <Text style={styles.amount}>${cartTotalAmount.toFixed(2)}</Text>
@@ -56,7 +57,7 @@ const CartScreen = props => {
           }}
           disabled={cartItems.length === 0}
         />
-      </View>
+      </Card>
       {cartItems.length > 0 && (
         <FlatList
           data={cartItems}
@@ -98,13 +99,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 20,
     padding: 10,
-    shadowColor: Colors.black,
-    backgroundColor: Colors.white,
-    shadowOpacity: 0.26,
-    shadowOffset: {width: 0, height: 2},
-    shadowRadius: 8,
-    elevation: 5,
-    borderRadius: 10,
   },
   summaryText: {
     fontFamily: 'OpenSans-Bold',
