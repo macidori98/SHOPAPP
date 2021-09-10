@@ -11,13 +11,11 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		70C62A0C26EA53300014603C /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C62A0B26EA53300014603C /* IndieFlower-Regular.ttf */; };
 		8056443B2C499544F1C9F99B /* libPods-SHOPAPP-SHOPAPPTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAACA9B555BEB1C7DC5396F /* libPods-SHOPAPP-SHOPAPPTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9DBFAFA2E0C84C21846C89C6 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB5F845FBA69449EAC64B69F /* IndieFlower-Regular.ttf */; };
-		FB4E386003FF169F2DE2E77D /* libPods-SHOPAPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF358FDF74467B7AFA8F93B /* libPods-SHOPAPP.a */; };
-		BC1F5CA6EA4041EFB9D0544D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3D3FEB4F63142248CB9EAC4 /* OpenSans-Bold.ttf */; };
 		B0757D19BC1F4552A63189F1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0C4FA427BA84BE4B06C5697 /* OpenSans-Regular.ttf */; };
+		BC1F5CA6EA4041EFB9D0544D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3D3FEB4F63142248CB9EAC4 /* OpenSans-Bold.ttf */; };
+		FB4E386003FF169F2DE2E77D /* libPods-SHOPAPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF358FDF74467B7AFA8F93B /* libPods-SHOPAPP.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,15 +41,31 @@
 		3172C98D4BFCF7F1D97E46E5 /* Pods-SHOPAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHOPAPP.debug.xcconfig"; path = "Target Support Files/Pods-SHOPAPP/Pods-SHOPAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		3DAACA9B555BEB1C7DC5396F /* libPods-SHOPAPP-SHOPAPPTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SHOPAPP-SHOPAPPTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF358FDF74467B7AFA8F93B /* libPods-SHOPAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SHOPAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		703D61B126EB39D9002CAFA4 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		703D61B226EB39D9002CAFA4 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		703D61B326EB39D9002CAFA4 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		703D61B426EB39D9002CAFA4 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		703D61B526EB39D9002CAFA4 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		703D61B626EB39D9002CAFA4 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		703D61B726EB39D9002CAFA4 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		703D61B826EB39D9002CAFA4 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		703D61B926EB39D9002CAFA4 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		703D61BA26EB39D9002CAFA4 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		703D61BB26EB39D9002CAFA4 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		703D61BC26EB39D9002CAFA4 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		703D61BD26EB39D9002CAFA4 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		703D61BE26EB39D9002CAFA4 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		703D61BF26EB39D9002CAFA4 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		703D61C026EB39D9002CAFA4 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		70C62A0B26EA53300014603C /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SHOPAPP/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C3D3FEB4F63142248CB9EAC4 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		DCAD5094D2D0B780412B3BFE /* Pods-SHOPAPP-SHOPAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHOPAPP-SHOPAPPTests.debug.xcconfig"; path = "Target Support Files/Pods-SHOPAPP-SHOPAPPTests/Pods-SHOPAPP-SHOPAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0C4FA427BA84BE4B06C5697 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		E554B04F8A02E83E9AEA4674 /* Pods-SHOPAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHOPAPP.release.xcconfig"; path = "Target Support Files/Pods-SHOPAPP/Pods-SHOPAPP.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FB5F845FBA69449EAC64B69F /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IndieFlower-Regular.ttf"; path = "../assets/fonts/IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 		FFB601C761D850DDE020EBEC /* Pods-SHOPAPP-SHOPAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHOPAPP-SHOPAPPTests.release.xcconfig"; path = "Target Support Files/Pods-SHOPAPP-SHOPAPPTests/Pods-SHOPAPP-SHOPAPPTests.release.xcconfig"; sourceTree = "<group>"; };
-		C3D3FEB4F63142248CB9EAC4 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E0C4FA427BA84BE4B06C5697 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,7 @@
 		13B07FAE1A68108700A75B9A /* SHOPAPP */ = {
 			isa = PBXGroup;
 			children = (
+				703D61B026EB39D9002CAFA4 /* Fonts */,
 				70C62A0A26EA53300014603C /* fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -134,6 +149,30 @@
 				FFB601C761D850DDE020EBEC /* Pods-SHOPAPP-SHOPAPPTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		703D61B026EB39D9002CAFA4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				703D61B126EB39D9002CAFA4 /* Fontisto.ttf */,
+				703D61B226EB39D9002CAFA4 /* Octicons.ttf */,
+				703D61B326EB39D9002CAFA4 /* Feather.ttf */,
+				703D61B426EB39D9002CAFA4 /* Entypo.ttf */,
+				703D61B526EB39D9002CAFA4 /* FontAwesome5_Brands.ttf */,
+				703D61B626EB39D9002CAFA4 /* MaterialCommunityIcons.ttf */,
+				703D61B726EB39D9002CAFA4 /* AntDesign.ttf */,
+				703D61B826EB39D9002CAFA4 /* Foundation.ttf */,
+				703D61B926EB39D9002CAFA4 /* Ionicons.ttf */,
+				703D61BA26EB39D9002CAFA4 /* FontAwesome5_Solid.ttf */,
+				703D61BB26EB39D9002CAFA4 /* FontAwesome5_Regular.ttf */,
+				703D61BC26EB39D9002CAFA4 /* FontAwesome.ttf */,
+				703D61BD26EB39D9002CAFA4 /* Zocial.ttf */,
+				703D61BE26EB39D9002CAFA4 /* EvilIcons.ttf */,
+				703D61BF26EB39D9002CAFA4 /* SimpleLineIcons.ttf */,
+				703D61C026EB39D9002CAFA4 /* MaterialIcons.ttf */,
+			);
+			name = Fonts;
+			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
 		};
 		70C62A0A26EA53300014603C /* fonts */ = {
@@ -273,8 +312,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				70C62A0C26EA53300014603C /* IndieFlower-Regular.ttf in Resources */,
-				9DBFAFA2E0C84C21846C89C6 /* IndieFlower-Regular.ttf in Resources */,
 				BC1F5CA6EA4041EFB9D0544D /* OpenSans-Bold.ttf in Resources */,
 				B0757D19BC1F4552A63189F1 /* OpenSans-Regular.ttf in Resources */,
 			);
