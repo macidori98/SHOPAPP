@@ -70,10 +70,12 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   title: {
+    fontFamily: 'OpenSans-Bold',
     fontSize: 18,
     marginVertical: 4,
   },
   price: {
+    fontFamily: 'OpenSans-Bold',
     fontSize: 14,
     color: Colors.greyish,
   },
@@ -85,6 +87,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   details: {
+    fontFamily: 'OpenSans-Regular',
     alignItems: 'center',
     height: '20%',
     padding: 10,

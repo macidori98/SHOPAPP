@@ -11,9 +11,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		70C62A0C26EA53300014603C /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70C62A0B26EA53300014603C /* IndieFlower-Regular.ttf */; };
 		8056443B2C499544F1C9F99B /* libPods-SHOPAPP-SHOPAPPTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAACA9B555BEB1C7DC5396F /* libPods-SHOPAPP-SHOPAPPTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9DBFAFA2E0C84C21846C89C6 /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB5F845FBA69449EAC64B69F /* IndieFlower-Regular.ttf */; };
 		FB4E386003FF169F2DE2E77D /* libPods-SHOPAPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF358FDF74467B7AFA8F93B /* libPods-SHOPAPP.a */; };
+		BC1F5CA6EA4041EFB9D0544D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3D3FEB4F63142248CB9EAC4 /* OpenSans-Bold.ttf */; };
+		B0757D19BC1F4552A63189F1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0C4FA427BA84BE4B06C5697 /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +43,15 @@
 		3172C98D4BFCF7F1D97E46E5 /* Pods-SHOPAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHOPAPP.debug.xcconfig"; path = "Target Support Files/Pods-SHOPAPP/Pods-SHOPAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		3DAACA9B555BEB1C7DC5396F /* libPods-SHOPAPP-SHOPAPPTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SHOPAPP-SHOPAPPTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF358FDF74467B7AFA8F93B /* libPods-SHOPAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SHOPAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70C62A0B26EA53300014603C /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SHOPAPP/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCAD5094D2D0B780412B3BFE /* Pods-SHOPAPP-SHOPAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHOPAPP-SHOPAPPTests.debug.xcconfig"; path = "Target Support Files/Pods-SHOPAPP-SHOPAPPTests/Pods-SHOPAPP-SHOPAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E554B04F8A02E83E9AEA4674 /* Pods-SHOPAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHOPAPP.release.xcconfig"; path = "Target Support Files/Pods-SHOPAPP/Pods-SHOPAPP.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FB5F845FBA69449EAC64B69F /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IndieFlower-Regular.ttf"; path = "../assets/fonts/IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
 		FFB601C761D850DDE020EBEC /* Pods-SHOPAPP-SHOPAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHOPAPP-SHOPAPPTests.release.xcconfig"; path = "Target Support Files/Pods-SHOPAPP-SHOPAPPTests/Pods-SHOPAPP-SHOPAPPTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3D3FEB4F63142248CB9EAC4 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E0C4FA427BA84BE4B06C5697 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 		13B07FAE1A68108700A75B9A /* SHOPAPP */ = {
 			isa = PBXGroup;
 			children = (
+				70C62A0A26EA53300014603C /* fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -106,6 +115,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		489FED4A15DB4BD58FB97E6A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB5F845FBA69449EAC64B69F /* IndieFlower-Regular.ttf */,
+				C3D3FEB4F63142248CB9EAC4 /* OpenSans-Bold.ttf */,
+				E0C4FA427BA84BE4B06C5697 /* OpenSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		6DD3F0CE9ACE63237EE41C92 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +133,16 @@
 				DCAD5094D2D0B780412B3BFE /* Pods-SHOPAPP-SHOPAPPTests.debug.xcconfig */,
 				FFB601C761D850DDE020EBEC /* Pods-SHOPAPP-SHOPAPPTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		70C62A0A26EA53300014603C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				70C62A0B26EA53300014603C /* IndieFlower-Regular.ttf */,
+			);
+			name = fonts;
+			path = ../assets/fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -134,6 +161,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				6DD3F0CE9ACE63237EE41C92 /* Pods */,
+				489FED4A15DB4BD58FB97E6A /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -245,6 +273,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				70C62A0C26EA53300014603C /* IndieFlower-Regular.ttf in Resources */,
+				9DBFAFA2E0C84C21846C89C6 /* IndieFlower-Regular.ttf in Resources */,
+				BC1F5CA6EA4041EFB9D0544D /* OpenSans-Bold.ttf in Resources */,
+				B0757D19BC1F4552A63189F1 /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

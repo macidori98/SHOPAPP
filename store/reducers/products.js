@@ -1,7 +1,7 @@
 import PRODUCTS from '../../data/dummy-data';
 
 /**
- * @type {{availableProducts: import('../../data/dummy-data').ProductArray, userProducts: import('../../data/dummy-data').ProductArray}}
+ * @type {{availableProducts: import('../../Types/CustomTypes').Products, userProducts: import('../../Types/CustomTypes').Products}}
  */
 const initialState = {
   availableProducts: PRODUCTS,
