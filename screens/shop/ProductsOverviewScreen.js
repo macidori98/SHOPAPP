@@ -25,8 +25,8 @@ const ProductsOverviewScreen = props => {
 
   const selectItemHandler = itemData => {
     props.navigation.navigate('ProductDetail', {
-      productId: itemData.item.id,
-      productTitle: itemData.item.title,
+      productId: itemData.id,
+      productTitle: itemData.title,
     });
   };
 
