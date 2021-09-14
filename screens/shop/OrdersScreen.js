@@ -1,12 +1,36 @@
-import React from 'react';
-import {View, Text, StyleSheet, FlatList, Platform} from 'react-native';
+import React, {useCallback, useEffect, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Platform,
+  ActivityIndicator,
+} from 'react-native';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import OrderItem from '../../components/shop/OrderItem';
 import CustomHeaderButton from '../../components/UI/CustomHeaderButton';
+import * as ordersActions from '../../store/actions/orders';
 
 const OrdersScreen = props => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const orders = useSelector(state => state.order.orders);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setIsLoading(true);
+    dispatch(ordersActions.setOrders()).then;
+    setIsLoading(false);
+  }, [dispatch]);
+
+  if (isLoading) {
+    <View>
+      <ActivityIndicator size="large" />
+    </View>;
+  }
 
   if (orders.length > 0) {
     return (

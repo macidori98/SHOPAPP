@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  Platform,
-  Button,
-  Alert,
-} from 'react-native';
+import {StyleSheet, FlatList, Platform, Button, Alert} from 'react-native';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import {useDispatch, useSelector} from 'react-redux';
 import ProductItem from '../../components/shop/ProductItem';
