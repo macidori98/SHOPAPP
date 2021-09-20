@@ -4,10 +4,12 @@ export const ADD_ORDER = 'ADD_ORDER';
 export const SET_ORDERS = 'SET_ORDERS';
 
 export const addOrder = (cartItems, totalAmount) => {
-  return async dispatch => {
+  return async (dispatch, getState) => {
     const date = new Date().toISOString();
+    const token = getState().auth.token;
+    const userId = getState().auth.userId;
     const response = await fetch(
-      'https://reactnativeapp-aee30-default-rtdb.firebaseio.com/orders.json',
+      `https://reactnativeapp-aee30-default-rtdb.firebaseio.com/orders/${userId}.json?auth=${token}`,
       {
         method: 'POST',
         headers: {
@@ -40,10 +42,12 @@ export const addOrder = (cartItems, totalAmount) => {
 };
 
 export const setOrders = () => {
-  return async dispatch => {
+  return async (dispatch, getState) => {
     try {
+      const token = getState().auth.token;
+      const userId = getState().auth.userId;
       const response = await fetch(
-        'https://reactnativeapp-aee30-default-rtdb.firebaseio.com/orders.json',
+        `https://reactnativeapp-aee30-default-rtdb.firebaseio.com/orders/${userId}.json?auth=${token}`,
         {
           method: 'GET',
         },

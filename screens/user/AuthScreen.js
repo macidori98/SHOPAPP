@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useCallback, useEffect, useReducer, useState} from 'react';
 import {
+  ActivityIndicator,
+  Alert,
   Button,
   KeyboardAvoidingView,
   ScrollView,
@@ -11,8 +13,100 @@ import Card from '../../components/UI/Card';
 import Input from '../../components/UI/Input';
 import Colors from '../../constants/Colors';
 import LinearGradient from 'react-native-linear-gradient';
+import * as authActions from '../../store/actions/auth';
+import {useDispatch} from 'react-redux';
+
+const REDUCER_UPDATE = 'UPDATE';
+
+const formReducer = (state, action) => {
+  console.log(action);
+  if (action.type === REDUCER_UPDATE) {
+    const updatedValues = {
+      ...state.inputValues,
+      [action.input]: action.value,
+    };
+
+    const updatedValiditiies = {
+      ...state.inputValidates,
+      [action.input]: action.isValid,
+    };
+
+    let formIsValid = true;
+    for (const key in updatedValiditiies) {
+      formIsValid = formIsValid && updatedValiditiies[key];
+    }
+
+    return {
+      formIsValid: formIsValid,
+      inputValidates: updatedValiditiies,
+      inputValues: updatedValues,
+    };
+  }
+
+  return state;
+};
 
 const AuthScreen = props => {
+  const dispatch = useDispatch();
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, seterror] = useState();
+
+  const [formState, dispatchFormState] = useReducer(formReducer, {
+    inputValues: {
+      email: '',
+      password: '',
+    },
+    inputValidates: {
+      email: false,
+      password: false,
+    },
+    formIsValid: false,
+  });
+
+  const authHandler = async () => {
+    //console.log(formState);
+    let action;
+    if (isSignUp) {
+      action = authActions.signup(
+        formState.inputValues.email,
+        formState.inputValues.password,
+      );
+    } else {
+      action = authActions.login(
+        formState.inputValues.email,
+        formState.inputValues.password,
+      );
+    }
+    setIsLoading(true);
+    seterror(null);
+    try {
+      await dispatch(action);
+      props.navigation.navigate('Shop');
+    } catch (err) {
+      seterror(err.message);
+      setIsLoading(false);
+    }
+  };
+
+  const inputChangeHandler = useCallback(
+    (inputIdentifier, inputValue, isValid) => {
+      dispatchFormState({
+        type: REDUCER_UPDATE,
+        value: inputValue,
+        isValid: isValid,
+        input: inputIdentifier,
+      });
+    },
+    [dispatchFormState],
+  );
+
+  useEffect(() => {
+    if (error) {
+      Alert.alert('Error', error, [{text: 'ok'}]);
+    }
+  }, [error]);
+
   return (
     <KeyboardAvoidingView
       behavior="padding"
@@ -28,8 +122,8 @@ const AuthScreen = props => {
               required
               email
               autoCapitalize="none"
-              errorMessage="please enter a valid email address"
-              onInputChange={() => {}}
+              errorText="please enter a valid email address"
+              onInputChange={inputChangeHandler}
               initialValue=""
             />
 
@@ -40,18 +134,28 @@ const AuthScreen = props => {
               secureTextEntry
               required
               minLength={5}
-              errorMessage="please enter a valid password"
-              onInputChange={() => {}}
+              errorText="please enter a valid password"
+              onInputChange={inputChangeHandler}
               initialValue=""
             />
             <View style={styles.buttonContainer}>
-              <Button title="Login" color={Colors.primary} onPress={() => {}} />
+              {isLoading ? (
+                <ActivityIndicator size="large" />
+              ) : (
+                <Button
+                  title={`${isSignUp ? 'sign up' : 'log in'}`}
+                  color={Colors.primary}
+                  onPress={authHandler}
+                />
+              )}
             </View>
             <View style={styles.buttonContainer}>
               <Button
-                title="Swith to sign up"
+                title={`Swith to ${isSignUp ? 'sign up' : 'log in'}`}
                 color={Colors.accent}
-                onPress={() => {}}
+                onPress={() => {
+                  setIsSignUp(prevState => !prevState);
+                }}
               />
             </View>
           </ScrollView>
