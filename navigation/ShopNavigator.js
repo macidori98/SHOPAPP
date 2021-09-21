@@ -6,6 +6,7 @@ import CartScreen from '../screens/shop/CartScreen';
 import {Platform} from 'react-native';
 import Colors from '../constants/Colors';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import OrdersScreen from '../screens/shop/OrdersScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -48,6 +49,14 @@ export const ProductsNavigation = () => {
   );
 };
 
+export const OrderNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Orders" component={OrdersScreen} />
+    </Stack.Navigator>
+  );
+};
+
 export const DrawerNavigation = () => {
   return (
     <Drawer.Navigator screenOptions={{headerShown: false}}>
@@ -56,6 +65,7 @@ export const DrawerNavigation = () => {
         component={ProductsNavigation}
         options={() => ({...defaultNavOptions, headerTitle: 'All Products'})}
       />
+      <Drawer.Screen name="Orders" component={OrderNavigator} />
     </Drawer.Navigator>
   );
 };

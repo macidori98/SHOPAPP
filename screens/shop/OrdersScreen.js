@@ -26,6 +26,23 @@ const OrdersScreen = props => {
     setIsLoading(false);
   }, [dispatch]);
 
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerTitle: 'Your orders',
+      headerLeft: () => (
+        <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+          <Item
+            title="Menu"
+            iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
+            onPress={() => {
+              props.navigation.toggleDrawer();
+            }}
+          />
+        </HeaderButtons>
+      ),
+    });
+  }, []);
+
   if (isLoading) {
     <View>
       <ActivityIndicator size="large" />
@@ -52,23 +69,6 @@ const OrdersScreen = props => {
       </View>
     );
   }
-};
-
-OrdersScreen.navigationOptions = navData => {
-  return {
-    headerTitle: 'Your orders',
-    headerLeft: (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <Item
-          title="Menu"
-          iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
-          onPress={() => {
-            navData.navigation.toggleDrawer();
-          }}
-        />
-      </HeaderButtons>
-    ),
-  };
 };
 
 const styles = StyleSheet.create({
