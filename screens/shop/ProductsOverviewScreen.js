@@ -12,7 +12,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import ProductItem from '../../components/shop/ProductItem';
 import CustomHeaderButton from '../../components/UI/CustomHeaderButton';
 import Colors from '../../constants/Colors';
-import Titles from '../../constants/Titles';
 import * as cartActions from '../../store/actions/cart';
 import * as productsActions from '../../store/actions/products';
 
@@ -28,6 +27,33 @@ const ProductsOverviewScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
   const [refreshing, setRefreshing] = useState(false);
+
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerLeft: () => (
+        <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+          <Item
+            title="Menu"
+            iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
+            onPress={() => {
+              props.navigation.toggleDrawer();
+            }}
+          />
+        </HeaderButtons>
+      ),
+      headerRight: () => (
+        <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+          <Item
+            title="Cart"
+            iconName={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'}
+            onPress={() => {
+              props.navigation.navigate('CartScreen');
+            }}
+          />
+        </HeaderButtons>
+      ),
+    });
+  }, []);
 
   const dispach = useDispatch();
 
@@ -119,34 +145,6 @@ const ProductsOverviewScreen = props => {
       )}
     </View>
   );
-};
-
-ProductsOverviewScreen.navigationOptions = navData => {
-  return {
-    headerTitle: Titles.productsOverview,
-    headerLeft: (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <Item
-          title="Menu"
-          iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
-          onPress={() => {
-            navData.navigation.toggleDrawer();
-          }}
-        />
-      </HeaderButtons>
-    ),
-    headerRight: (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <Item
-          title="Cart"
-          iconName={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'}
-          onPress={() => {
-            navData.navigation.navigate('Cart');
-          }}
-        />
-      </HeaderButtons>
-    ),
-  };
 };
 
 export default ProductsOverviewScreen;
