@@ -1,15 +1,12 @@
 import React, {useCallback, useEffect, useReducer, useState} from 'react';
 import {
   View,
-  Text,
-  TextInput,
   StyleSheet,
   ScrollView,
   Platform,
   Alert,
   KeyboardAvoidingView,
   ActivityIndicator,
-  Button,
 } from 'react-native';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import {useDispatch, useSelector} from 'react-redux';
@@ -52,7 +49,8 @@ const EditProductScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
-  const prodId = props.navigation.getParam('productId');
+  const prodId = props.route.params.productId;
+
   /**
    * @type {Product}
    */
@@ -75,6 +73,26 @@ const EditProductScreen = props => {
       imageUrl: editedProduct ? true : false,
     },
     formIsValid: editedProduct ? true : false,
+  });
+
+  useEffect(() => {
+    const submitFn = props.route.params.submit;
+    props.navigation.setOptions({
+      headerTitle: props.route.params.productId
+        ? 'Edit Product'
+        : 'Add Product',
+      headerRight: () => (
+        <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+          <Item
+            title="save"
+            iconName={
+              Platform.OS === 'android' ? 'md-checkmark' : 'ios-checkmark'
+            }
+            onPress={submitFn}
+          />
+        </HeaderButtons>
+      ),
+    });
   });
 
   useEffect(() => {
@@ -209,26 +227,6 @@ const EditProductScreen = props => {
       )}
     </KeyboardAvoidingView>
   );
-};
-
-EditProductScreen.navigationOptions = navData => {
-  const submitFn = navData.navigation.getParam('submit');
-  return {
-    headerTitle: navData.navigation.getParam('productId')
-      ? 'Edit Product'
-      : 'Add Product',
-    headerRight: (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <Item
-          title="save"
-          iconName={
-            Platform.OS === 'android' ? 'md-checkmark' : 'ios-checkmark'
-          }
-          onPress={submitFn}
-        />
-      </HeaderButtons>
-    ),
-  };
 };
 
 const styles = StyleSheet.create({

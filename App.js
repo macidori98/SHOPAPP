@@ -8,7 +8,7 @@ import orderReducer from './store/reducers/orders';
 import authReducer from './store/reducers/auth';
 import ReduxThunk from 'redux-thunk';
 import {NavigationContainer} from '@react-navigation/native';
-import {DrawerNavigation} from './navigation/ShopNavigator';
+import {MainNavigator} from './navigation/ShopNavigator';
 
 const rootReducer = combineReducers({
   products: productsReducer,
@@ -23,7 +23,7 @@ const App = props => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <DrawerNavigation />
+        <MainNavigator />
       </NavigationContainer>
     </Provider>
   );

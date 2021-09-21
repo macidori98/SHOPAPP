@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -22,6 +22,13 @@ const CartScreen = props => {
     /** @param {{cart: import('../../Types/CustomTypes').CartStateObject}} state*/ state =>
       state.cart.totalAmount,
   );
+
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerTitle: 'Your cart',
+      title: 'Your cart',
+    });
+  });
 
   /**
    * @typedef {{productId: string, productTitle: string, productPrice: number, sum: number, quantity: number}} CartItem

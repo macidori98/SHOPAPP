@@ -65,7 +65,6 @@ const AuthScreen = props => {
   });
 
   const authHandler = async () => {
-    //console.log(formState);
     let action;
     if (isSignUp) {
       action = authActions.signup(
@@ -82,7 +81,7 @@ const AuthScreen = props => {
     seterror(null);
     try {
       await dispatch(action);
-      props.navigation.navigate('Shop');
+      props.navigation.replace('Shopp');
     } catch (err) {
       seterror(err.message);
       setIsLoading(false);
@@ -106,6 +105,12 @@ const AuthScreen = props => {
       Alert.alert('Error', error, [{text: 'ok'}]);
     }
   }, [error]);
+
+  useEffect(() => {
+    props.navigation.setOptions({
+      headerTitle: 'Authenticate',
+    });
+  }, []);
 
   return (
     <KeyboardAvoidingView
@@ -163,10 +168,6 @@ const AuthScreen = props => {
       </LinearGradient>
     </KeyboardAvoidingView>
   );
-};
-
-AuthScreen.navigationOptions = {
-  headerTitle: 'Authenticate',
 };
 
 const styles = StyleSheet.create({

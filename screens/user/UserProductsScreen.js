@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   StyleSheet,
   FlatList,
@@ -39,6 +39,35 @@ const UserProductsScreen = props => {
     ]);
   };
 
+  useEffect(() => {
+    props.navigation.setOptions({
+      title: 'User products',
+      headerTitle: 'User products',
+      headerLeft: () => (
+        <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+          <Item
+            title="Menu"
+            iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
+            onPress={() => {
+              props.navigation.toggleDrawer();
+            }}
+          />
+        </HeaderButtons>
+      ),
+      headerRight: () => (
+        <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+          <Item
+            title="Add"
+            iconName={Platform.OS === 'android' ? 'md-add' : 'ios-add'}
+            onPress={() => {
+              props.navigation.navigate('EditProducts');
+            }}
+          />
+        </HeaderButtons>
+      ),
+    });
+  }, []);
+
   if (userProducts.length === 0) {
     return (
       <View style={styles.noData}>
@@ -69,34 +98,6 @@ const UserProductsScreen = props => {
       )}
     />
   );
-};
-
-UserProductsScreen.navigationOptions = navData => {
-  return {
-    headerTitle: 'User products',
-    headerLeft: (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <Item
-          title="Menu"
-          iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
-          onPress={() => {
-            navData.navigation.toggleDrawer();
-          }}
-        />
-      </HeaderButtons>
-    ),
-    headerRight: (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <Item
-          title="Add"
-          iconName={Platform.OS === 'android' ? 'md-add' : 'ios-add'}
-          onPress={() => {
-            navData.navigation.navigate('EditProducts');
-          }}
-        />
-      </HeaderButtons>
-    ),
-  };
 };
 
 const styles = StyleSheet.create({
