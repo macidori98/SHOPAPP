@@ -16,7 +16,7 @@ const ProductDetailScreen = props => {
   /**
    * @type {string}
    */
-  const productId = props.navigation.getParam('productId');
+  const productId = props.route.params.productId;
 
   const selectedProduct = useSelector(
     /** @param {{products: import('../../Types/CustomTypes').ProductStateObject}} state*/ state =>
@@ -44,6 +44,7 @@ const ProductDetailScreen = props => {
 };
 
 ProductDetailScreen.navigationOptions = navData => {
+  console.log('NAVDATA: ' + navData);
   return {
     headerTitle: navData.navigation.getParam('productTitle'),
   };

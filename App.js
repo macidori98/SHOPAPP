@@ -7,7 +7,8 @@ import cartReducer from './store/reducers/cart';
 import orderReducer from './store/reducers/orders';
 import authReducer from './store/reducers/auth';
 import ReduxThunk from 'redux-thunk';
-import NavigationContainer from './navigation/NavigationContainer';
+import {NavigationContainer} from '@react-navigation/native';
+import {DrawerNavigation} from './navigation/ShopNavigator';
 
 const rootReducer = combineReducers({
   products: productsReducer,
@@ -21,7 +22,9 @@ const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 const App = props => {
   return (
     <Provider store={store}>
-      <NavigationContainer />
+      <NavigationContainer>
+        <DrawerNavigation />
+      </NavigationContainer>
     </Provider>
   );
 };
