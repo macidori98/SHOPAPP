@@ -12,7 +12,58 @@ import EditProductScreen from '../screens/user/EditProductScreen';
 import AuthScreen from '../screens/user/AuthScreen';
 import StartupScreen from '../screens/StartupScreen';
 
-const Stack = createNativeStackNavigator();
+/**
+ * @typedef {{ProductsOverview: undefined, ProductDetail: undefined, CartScreen: undefined}} ProductsParamList
+ */
+/**
+ * @typedef {{Orders: undefined}} OrdersParamList
+ */
+/**
+ * @typedef {{UserProducts: undefined, EditProducts: undefined}} UserParamList
+ */
+/**
+ * @typedef {{Auth: undefined}} AuthParamList
+ */
+/**
+ * @typedef {{Authh: undefined, Shopp: undefined, Startup: undefined}} ShopParamList
+ */
+/**
+ * @typedef {{Shop: undefined, Orderss: undefined, Admin: undefined}} DrawerParamList
+ */
+
+/**
+ * @template T
+ * @typedef {import('@react-navigation/native').TypedNavigator<T, import('@react-navigation/native').StackNavigationState<import('@react-navigation/native').ParamListBase>,  import('@react-navigation/native-stack/lib/typescript/src/types').NativeStackNavigationOptions, import('@react-navigation/native-stack/lib/typescript/src/types').NativeStackNavigationEventMap, ({ initialRouteName, children, screenListeners, screenOptions, ...rest}: import('@react-navigation/native-stack/lib/typescript/src/types').NativeStackNavigatorProps) => JSX.Element>} CreateNativeStackNavigatorResult
+ */
+
+/**
+ * @template K
+ * @typedef {import('@react-navigation/native').TypedNavigator<K, import('@react-navigation/routers').DrawerNavigationState<import('@react-navigation/routers').ParamListBase>, import('@react-navigation/drawer').DrawerNavigationOptions, import('@react-navigation/drawer/lib/typescript/src/types').DrawerNavigationEventMap, ({ initialRouteName, defaultStatus, backBehavior, children, screenListeners, screenOptions, openByDefault, lazy, drawerContentOptions, ...rest }: (import('@react-navigation/native').DefaultNavigatorOptions<import('@react-navigation/routers').ParamListBase, import('@react-navigation/routers').DrawerNavigationState<import('@react-navigation/routers').ParamListBase>, import('@react-navigation/drawer').DrawerNavigationOptions, import('@react-navigation/drawer/lib/typescript/src/types').DrawerNavigationEventMap> & import('@react-navigation/routers').DrawerRouterOptions & import('@react-navigation/drawer/lib/typescript/src/types').DrawerNavigationConfig))=> JSX.Element>} CreateDrawerNavigatorResult
+ */
+
+/**
+ * @type {CreateNativeStackNavigatorResult<ProductsParamList>}
+ */
+const ProductsStack = createNativeStackNavigator();
+/**
+ * @type {CreateNativeStackNavigatorResult<OrdersParamList>}
+ */
+const OrdersStack = createNativeStackNavigator();
+/**
+ * @type {CreateNativeStackNavigatorResult<UserParamList>}
+ */
+const UserStack = createNativeStackNavigator();
+/**
+ * @type {CreateNativeStackNavigatorResult<AuthParamList>}
+ */
+const AuthStack = createNativeStackNavigator();
+/**
+ * @type {CreateNativeStackNavigatorResult<ShopParamList>}
+ */
+const ShopStack = createNativeStackNavigator();
+/**
+ * @type {CreateDrawerNavigatorResult<DrawerParamList>}
+ */
 const Drawer = createDrawerNavigator();
 
 const defaultNavOptions = {
@@ -30,13 +81,13 @@ const defaultNavOptions = {
 
 const ProductsNavigation = () => {
   return (
-    <Stack.Navigator screenOptions={{...defaultNavOptions}}>
-      <Stack.Screen
+    <ProductsStack.Navigator screenOptions={{...defaultNavOptions}}>
+      <ProductsStack.Screen
         name="ProductsOverview"
         component={ProductsOverviewScreen}
         options={() => ({headerTitle: 'All Products', title: 'All products'})}
       />
-      <Stack.Screen
+      <ProductsStack.Screen
         name="ProductDetail"
         component={ProductDetailScreen}
         options={({route}) => ({
@@ -44,45 +95,45 @@ const ProductsNavigation = () => {
           headerTitle: route.params.productTitle,
         })}
       />
-      <Stack.Screen
+      <ProductsStack.Screen
         name="CartScreen"
         component={CartScreen}
         options={() => ({headerTitle: 'Cart', title: 'Cart'})}
       />
-    </Stack.Navigator>
+    </ProductsStack.Navigator>
   );
 };
 
 const OrderNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
+    <OrdersStack.Navigator>
+      <OrdersStack.Screen
         name="Orders"
         component={OrdersScreen}
         options={() => defaultNavOptions}
       />
-    </Stack.Navigator>
+    </OrdersStack.Navigator>
   );
 };
 
 const AdminNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={defaultNavOptions}>
-      <Stack.Screen name="UserProducts" component={UserProductsScreen} />
-      <Stack.Screen
+    <UserStack.Navigator screenOptions={defaultNavOptions}>
+      <UserStack.Screen name="UserProducts" component={UserProductsScreen} />
+      <UserStack.Screen
         name="EditProducts"
         component={EditProductScreen}
         initialParams={{productId: -1}}
       />
-    </Stack.Navigator>
+    </UserStack.Navigator>
   );
 };
 
 const AuthNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Auth" component={AuthScreen} />
-    </Stack.Navigator>
+    <AuthStack.Navigator>
+      <AuthStack.Screen name="Auth" component={AuthScreen} />
+    </AuthStack.Navigator>
   );
 };
 
@@ -96,7 +147,7 @@ const ShopNavigator = () => {
         drawerInactiveTintColor: Colors.greyish,
       }}>
       <Drawer.Screen
-        name="Shop"
+        name=""
         component={ProductsNavigation}
         options={() => ({headerTitle: 'All Products', title: 'All products'})}
       />
@@ -112,14 +163,14 @@ const ShopNavigator = () => {
 
 export const MainNavigator = () => {
   return (
-    <Stack.Navigator
+    <ShopStack.Navigator
       screenOptions={{
         ...defaultNavOptions,
         headerShown: false,
       }}>
-      <Stack.Screen name="Startup" component={StartupScreen} />
-      <Stack.Screen name="Authh" component={AuthNavigator} />
-      <Stack.Screen name="Shopp" component={ShopNavigator} />
-    </Stack.Navigator>
+      <ShopStack.Screen name="Startup" component={StartupScreen} />
+      <ShopStack.Screen name="Authh" component={AuthNavigator} />
+      <ShopStack.Screen name="Shopp" component={ShopNavigator} />
+    </ShopStack.Navigator>
   );
 };
